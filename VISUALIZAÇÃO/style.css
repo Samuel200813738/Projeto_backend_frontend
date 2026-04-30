@@ -1,8 +1,235 @@
-h1{
-    text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
-    background-color: white;
-    font-family: 'Times New Roman', Times, serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, white);
+}
+
+.topo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #fff;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo-rodape{
+    width: 150px;
+    height: auto;
+}
+
+#Logo_Educacao,
+#Logo_Gov{
+    display: flex;
+    align-items: center;
+}
+
+#Logo_Imagem{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#Logo_Educacao img,
+#logo_Gov img,
+#Logo_Imagem img{
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
+    transition: transform 0.3 ease;
+}
+
+#Logo_Educacao img:hover,
+#logo_Gov img:hover,
+#Logo_Imagem img:hover{
+    transform: scale(1.05);
+}
+
+.social{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social li a{
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.social img{
+    width: 20px;
+    height: 20px;
+}
+
+.login-container{
+    margin-top: 40px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: fade 0,6s ease;
+}
+
+.login-container h2{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.field label{
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.input{
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input:focus{
+    border-color: #4facfe;
+    outline: none;
+    box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+.btn{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover{
+    background: #555;
+    transform: translateY(-2px);
+}
+
+.loader-dots{
+    display: none;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.loader-dots span{
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pular 1s infinite ease-in-out;
+}
+
+.loader-dots span:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+.loader-dots span:nth-child(3){
+    animation-delay: 0.4s;
+}
+
+.btn.loading .loader-dots{
+    display: flex;
+}
+
+.btn.loading .btn-text{
+    display: none;
+}
+
+.msg{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+}
+
+}
+
+@keyframes pular{
+    0%, 80%, 100%{
+        transform: scale(0);
+}
+
+40%{
+transform: scale(1);
+}
+
+}
+
+@media(max-width:768px){
+.topo{
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+#Logo_Educacao img,
+#logo_Gov img,
+#Logo_Imagem img{
+    max-height: 60px;
+}
+
+.login-container{
+    width: 90%;
+    padding: 30px;
+}
+
+.social{
+    justify-content: center;
+    margin-top: 10px;
+}
+
 }
